@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Card } from "./Card";
+import Card from "./Card";
 
 type Todo = {
   todo: string;
   color: string;
 };
 
-function App(): React.ReactElement {
+function App(): React.ReactElement<{}> {
   const [todo, setTodo] = useState<string>("");
   const [todoList, setTodoList] = useState<Todo[]>([]);
 
@@ -51,7 +51,7 @@ function App(): React.ReactElement {
         }}
       >
         {todoList.map(({ todo, color }) => (
-          <Card todo={todo} randomColor={color} />
+          <Card todo={todo} randomColor={color} key={todo} />
         ))}
       </div>
     </div>
