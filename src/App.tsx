@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./App.css";
 import Card from "./Card";
+import { TodoContext } from "./context";
 
 type Todo = {
   todo: string;
@@ -9,7 +10,8 @@ type Todo = {
 
 function App(): React.ReactElement<{}> {
   const [todo, setTodo] = useState<string>("");
-  const [todoList, setTodoList] = useState<Todo[]>([]);
+  // const [todoList, setTodoList] = useState<Todo[]>([]);
+  const { todoList, setTodoList } = useContext(TodoContext);
 
   return (
     <div className="App">

@@ -5,6 +5,11 @@ type TodoProps = {
   randomColor: string;
 };
 
+// const hi: TodoProps = {
+//   todo: "hi",
+//   randomColor: "123"
+// }
+
 const Card: React.FC<TodoProps> = ({ todo, randomColor }) => {
   const [draggable, setDraggable] = useState<boolean>(false);
   const CardRef = useRef<HTMLDivElement>(null);
